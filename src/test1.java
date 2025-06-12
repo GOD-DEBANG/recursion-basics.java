@@ -1,15 +1,17 @@
-public class test1 {
+import java.util.Scanner;
 
-        public static String num(String num1){
-            String num2 = "Hello world";
-            for(int i =0; i<100; i++){
-                System.out.println(num2);
-            }
-            return  num2;
+public class test1{
+    public static int natural(int r ){
+        if(r == 1){
+            return 1;
         }
-        public static void main(String[]  args){
-            String name = num("input string");
-            System.out.println("Returnd"+name);
-        }
+        return r + natural(r-1);
     }
-
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int sum = sc.nextInt();         // Find the sum of first N natural numbers using recursion.
+       int sum_of_natural = natural(sum);
+        System.out.println(sum_of_natural);
+        sc.close();
+    }
+}
